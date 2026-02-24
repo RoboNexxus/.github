@@ -9,6 +9,7 @@ Welcome to RoboNexus — the official robotics and technology club of our school
 Our mission: Inspiring the next generation of innovators through teamwork, curiosity, and hands-on experience.
 
 Contact: robonexus.ais46@gmail.com
-Learn more: robonexxus.netlify.app
+
+Learn more: https://robonexxus.netlify.app
 
 Building the future, one robot at a time.

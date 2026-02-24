@@ -1,3 +1,5 @@
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=RoboNexxus&label=Profile%20views&color=0e75b6&style=flat" alt="Robo Nexus" /> </p>
+
 Welcome to RoboNexus — the official robotics and technology club of our school, founded in 2024.
 
 🤝 Bringing together students passionate about robotics, engineering, and creative tech

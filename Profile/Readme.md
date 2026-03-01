@@ -90,7 +90,7 @@ Student-led initiatives that address real-world challenges. Teams collaborate on
 |:----:|-------------|-------------|
 | **2024** | Club Founded | Established RoboNexus at AIS-46 |
 | **2025** | NYRC'25 Competition | First competitive robotics competition |
-| **2025** | Automation Project | Deployed certificate mailer system (90+ recipients) |
+| **2025** | Automation Project | Deployed certificate mailer system (222+ recipients) |
 | **2025** | Digital Presence | Launched official website and online platforms |
 
 ---

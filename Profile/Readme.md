@@ -15,7 +15,7 @@
 
 ## 📖 About Us
 
-**RoboNexus** is the official robotics and technology club of AIS-46, founded in 2024. We are a dynamic community of students passionate about exploring robotics, artificial intelligence, and innovative technologies through hands-on learning and competitive experiences.
+**RoboNexus** is the official robotics club of AIS-46, founded in 2024. We are a dynamic community of students passionate about exploring robotics, artificial intelligence, and innovative technologies through hands-on learning and competitive experiences.
 
 ### Mission Statement
 To empower students with practical skills in robotics and technology while fostering creativity, critical thinking, teamwork, and a genuine passion for innovation.

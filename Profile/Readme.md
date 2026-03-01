@@ -1,7 +1,7 @@
 <div align="center">
 
 # RoboNexus
-### Official Robotics & Technology Club | AIS-46
+### Official Robotics | AIS-46
 
 **Building the Future, One Robot at a Time**
 

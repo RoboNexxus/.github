@@ -34,8 +34,20 @@ jobs:
                -H "Accept: application/vnd.github.v3+json" \
                https://api.github.com/orgs/RoboNexxus/repos?per_page=100 > repos.json
           
-          # Extract repo names
-          cat repos.json | jq -r '.[].name' > repo_list.txt
+          # Debug: Show API response
+          echo "API Response (first 20 lines):"
+          head -20 repos.json
+          
+          # Check if repos.json is an array before extracting names
+          if jq -e 'type == "array"' repos.json > /dev/null 2>&1; then
+            jq -r '.[].name' repos.json > repo_list.txt
+            echo "Successfully extracted $(wc -l < repo_list.txt) repositories:"
+            cat repo_list.txt
+          else
+            echo "ERROR: API did not return a repo array."
+            cat repos.json
+            exit 1
+          fi
           
       - name: Clone and count lines
         run: |
@@ -43,26 +55,45 @@ jobs:
           total_code=0
           total_comments=0
           total_blanks=0
+          repo_count=0
           
           # Create temp directory
           mkdir -p temp_repos
           
+          echo "================================"
+          echo "Starting to count lines..."
+          echo "================================"
+          
           # Clone each repo and count lines
           while IFS= read -r repo; do
-            echo "Processing $repo..."
-            git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/RoboNexxus/$repo.git temp_repos/$repo 2>/dev/null || continue
+            echo ""
+            echo "📦 Processing: $repo"
+            git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/RoboNexxus/$repo.git temp_repos/$repo 2>/dev/null || {
+              echo "  ❌ Failed to clone $repo"
+              continue
+            }
             
             # Count lines using cloc
-            cloc temp_repos/$repo --json --quiet > cloc_output.json 2>/dev/null || continue
+            cloc temp_repos/$repo --json --quiet > cloc_output.json 2>/dev/null || {
+              echo "  ⚠️ No code found in $repo"
+              rm -rf temp_repos/$repo
+              continue
+            }
             
             # Extract totals
             code=$(cat cloc_output.json | jq -r '.SUM.code // 0')
             comments=$(cat cloc_output.json | jq -r '.SUM.comment // 0')
             blanks=$(cat cloc_output.json | jq -r '.SUM.blank // 0')
             
-            total_code=$((total_code + code))
-            total_comments=$((total_comments + comments))
-            total_blanks=$((total_blanks + blanks))
+            if [ "$code" -gt 0 ]; then
+              total_code=$((total_code + code))
+              total_comments=$((total_comments + comments))
+              total_blanks=$((total_blanks + blanks))
+              repo_count=$((repo_count + 1))
+              echo "  ✅ $repo: $code lines of code"
+            else
+              echo "  ⚠️ $repo: No code detected"
+            fi
             
             # Clean up
             rm -rf temp_repos/$repo
@@ -74,13 +105,20 @@ jobs:
           formatted_lines=$(printf "%'d" $total_lines)
           formatted_code=$(printf "%'d" $total_code)
           
-          echo "TOTAL_LINES=$formatted_lines" >> $GITHUB_ENV
-          echo "TOTAL_CODE=$formatted_code" >> $GITHUB_ENV
-          
+          echo ""
+          echo "================================"
+          echo "📊 FINAL RESULTS"
+          echo "================================"
           echo "Total Lines: $formatted_lines"
-          echo "Code: $formatted_code"
+          echo "Code Lines: $formatted_code"
           echo "Comments: $total_comments"
           echo "Blanks: $total_blanks"
+          echo "Repositories: $repo_count"
+          echo "================================"
+          
+          echo "TOTAL_LINES=$formatted_lines" >> $GITHUB_ENV
+          echo "TOTAL_CODE=$formatted_code" >> $GITHUB_ENV
+          echo "REPO_COUNT=$repo_count" >> $GITHUB_ENV
           
       - name: Update README
         run: |

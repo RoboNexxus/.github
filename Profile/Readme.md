@@ -171,6 +171,30 @@ We welcome students of all skill levels and backgrounds. Whether you're a comple
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=RoboNexxus&show_icons=true&theme=react&hide_border=true&bg_color=0d1117&title_color=00d9ff&icon_color=00d9ff&text_color=c9d1d9&count_private=true)
 
+### 💻 Code Statistics (All Repositories)
+
+<table>
+<tr>
+<td align="center">
+<img src="https://img.shields.io/badge/Total_Lines-Calculating...-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
+<br>
+<sub>Across all repositories</sub>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Languages-Python_|_C++_|_JS-00d9ff?style=for-the-badge&logo=code&logoColor=white" alt="Languages"/>
+<br>
+<sub>Primary languages</sub>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Projects-Active-00d9ff?style=for-the-badge&logo=github&logoColor=white" alt="Projects"/>
+<br>
+<sub>In development</sub>
+</td>
+</tr>
+</table>
+
+*Line count updates automatically via GitHub Actions*
+
 </div>
 
 ---

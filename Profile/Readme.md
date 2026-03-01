@@ -176,7 +176,7 @@ We welcome students of all skill levels and backgrounds. Whether you're a comple
 <table>
 <tr>
 <td align="center">
-<img src="https://img.shields.io/badge/Total_Lines-46449-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
+<img src="https://img.shields.io/badge/Total_Lines-46453-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
 <br>
 <sub>Across all 5 repositories</sub>
 </td>

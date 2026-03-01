@@ -8,7 +8,7 @@
 
 ![Profile Views](https://komarev.com/ghpvc/?username=RoboNexxus&label=Profile%20views&color=00d9ff&style=for-the-badge)
 [![Website](https://img.shields.io/badge/Website-robonexxus.netlify.app-00d9ff?style=for-the-badge&logo=netlify&logoColor=white)](https://robonexxus.netlify.app)
-[![Email](https://img.shields.io/badge/Email-robonexus.ais46@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:robonexus.ais46@gmail.com)
+[![Contact Us](https://img.shields.io/badge/Contact_Us-Get_In_Touch-D14836?style=for-the-badge&logo=mail&logoColor=white)](https://robonexxus.netlify.app/contact)
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
@@ -171,7 +171,7 @@ Participating in robotics competitions and tech challenges
 
 Interested in joining RoboNexus or learning more?
 
-**Email us:** [robonexus.ais46@gmail.com](mailto:robonexus.ais46@gmail.com)  
+**Contact us:** [Visit our Contact Page](https://robonexxus.netlify.app/contact)  
 **Visit our website:** [robonexxus.netlify.app](https://robonexxus.netlify.app)
 
 </div>
@@ -185,7 +185,7 @@ Interested in joining RoboNexus or learning more?
 | Resource | Description | Link |
 |----------|-------------|------|
 | 🌐 Website | Official club website | [Visit](https://robonexxus.netlify.app) |
-| 📧 Email | Contact us | [Email](mailto:robonexus.ais46@gmail.com) |
+| 📧 Contact | Get in touch with us | [Contact Page](https://robonexxus.netlify.app/contact) |
 | 💻 GitHub | Our projects & code | [Explore](https://github.com/RoboNexxus) |
 | 📱 Discord | Community chat | Coming Soon |
 

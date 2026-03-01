@@ -136,6 +136,10 @@ jobs:
         run: |
           # Update the README with the new counts
           sed -i "s/Total_Lines-Calculating\.\.\./Total_Lines-${{ env.TOTAL_LINES }}/g" Profile/Readme.md
+          sed -i "s/Calculating\.\.\.-00d9ff/Calculating...-00d9ff/g" Profile/Readme.md || true
+          sed -i "s/Total_Lines-[0-9,]*-00d9ff/Total_Lines-${{ env.TOTAL_LINES }}-00d9ff/g" Profile/Readme.md || true
+          sed -i "s/Total_Lines-[0-9,]*/Total_Lines-${{ env.TOTAL_LINES }}/g" Profile/Readme.md || true
+          sed -i "s/Across all repositories/Across all ${{ env.REPO_COUNT }} repositories/g" Profile/Readme.md || true
           
       - name: Commit changes
         env:

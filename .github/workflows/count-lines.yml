@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   count-lines:
     runs-on: ubuntu-latest
@@ -15,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Install cloc
         run: |
@@ -65,26 +70,28 @@ jobs:
           
           total_lines=$((total_code + total_comments + total_blanks))
           
-          echo "TOTAL_LINES=$total_lines" >> $GITHUB_ENV
-          echo "TOTAL_CODE=$total_code" >> $GITHUB_ENV
-          echo "TOTAL_COMMENTS=$total_comments" >> $GITHUB_ENV
-          echo "TOTAL_BLANKS=$total_blanks" >> $GITHUB_ENV
+          # Format numbers with commas
+          formatted_lines=$(printf "%'d" $total_lines)
+          formatted_code=$(printf "%'d" $total_code)
           
-          echo "Total Lines: $total_lines"
-          echo "Code: $total_code"
+          echo "TOTAL_LINES=$formatted_lines" >> $GITHUB_ENV
+          echo "TOTAL_CODE=$formatted_code" >> $GITHUB_ENV
+          
+          echo "Total Lines: $formatted_lines"
+          echo "Code: $formatted_code"
           echo "Comments: $total_comments"
           echo "Blanks: $total_blanks"
           
       - name: Update README
         run: |
           # Update the README with the new counts
-          sed -i "s/TOTAL_LINES_PLACEHOLDER/${{ env.TOTAL_LINES }}/g" Profile/Readme.md
-          sed -i "s/TOTAL_CODE_PLACEHOLDER/${{ env.TOTAL_CODE }}/g" Profile/Readme.md
+          sed -i "s/Total_Lines-Calculating\.\.\./Total_Lines-${{ env.TOTAL_LINES }}/g" Profile/Readme.md
           
       - name: Commit changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.name "github-actions[bot]"
           git add Profile/Readme.md
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update lines of code count"
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "📊 Update lines of code count" && git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main)

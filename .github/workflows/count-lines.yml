@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: '0 0 * * 0' # Run every Sunday at midnight
   workflow_dispatch: # Allow manual trigger
+  repository_dispatch: # Triggered by other repos on push
+    types: [code-update]
   push:
     branches:
       - main
@@ -72,6 +74,9 @@ jobs:
           # Create temp directory
           mkdir -p temp_repos
           
+          # Associative array for per-language lines
+          declare -A lang_lines
+          
           echo "================================"
           echo "Starting to count lines..."
           echo "================================"
@@ -103,6 +108,12 @@ jobs:
               total_blanks=$((total_blanks + blanks))
               repo_count=$((repo_count + 1))
               echo "  ✅ $repo: $code lines of code"
+              
+              # Aggregate per-language lines (code only)
+              for lang in $(jq -r 'keys[] | select(. != "header" and . != "SUM")' cloc_output.json); do
+                lc=$(jq -r ".[\"$lang\"].code // 0" cloc_output.json)
+                lang_lines[$lang]=$(( ${lang_lines[$lang]:-0} + lc ))
+              done
             else
               echo "  ⚠️ $repo: No code detected"
             fi
@@ -117,6 +128,13 @@ jobs:
           formatted_lines=$(printf "%'d" $total_lines)
           formatted_code=$(printf "%'d" $total_code)
           
+          # Build language breakdown string sorted by lines descending
+          lang_json=""
+          for lang in "${!lang_lines[@]}"; do
+            lang_json+="${lang_lines[$lang]} $lang\n"
+          done
+          lang_breakdown=$(echo -e "$lang_json" | sort -rn | head -10 | awk '{printf "%s:%s,", $2, $1}' | sed 's/,$//')
+          
           echo ""
           echo "================================"
           echo "📊 FINAL RESULTS"
@@ -126,11 +144,13 @@ jobs:
           echo "Comments: $total_comments"
           echo "Blanks: $total_blanks"
           echo "Repositories: $repo_count"
+          echo "Languages: $lang_breakdown"
           echo "================================"
           
           echo "TOTAL_LINES=$formatted_lines" >> $GITHUB_ENV
           echo "TOTAL_CODE=$formatted_code" >> $GITHUB_ENV
           echo "REPO_COUNT=$repo_count" >> $GITHUB_ENV
+          echo "LANG_BREAKDOWN=$lang_breakdown" >> $GITHUB_ENV
           
       - name: Update README
         run: |
@@ -139,7 +159,17 @@ jobs:
           sed -i "s/Calculating\.\.\.-00d9ff/Calculating...-00d9ff/g" Profile/Readme.md || true
           sed -i "s/Total_Lines-[0-9,]*-00d9ff/Total_Lines-${{ env.TOTAL_LINES }}-00d9ff/g" Profile/Readme.md || true
           sed -i "s/Total_Lines-[0-9,]*/Total_Lines-${{ env.TOTAL_LINES }}/g" Profile/Readme.md || true
+          sed -i "s/Across all [0-9]* repositories/Across all ${{ env.REPO_COUNT }} repositories/g" Profile/Readme.md || true
           sed -i "s/Across all repositories/Across all ${{ env.REPO_COUNT }} repositories/g" Profile/Readme.md || true
+          
+          # Update or insert language breakdown comment (parseable by website JS)
+          # Format: <!-- LANG_DATA:Python:12345,JavaScript:6789,CSS:3456 -->
+          if grep -q '<!-- LANG_DATA:' Profile/Readme.md; then
+            sed -i "s/<!-- LANG_DATA:.* -->/<!-- LANG_DATA:${{ env.LANG_BREAKDOWN }} -->/" Profile/Readme.md
+          else
+            echo "" >> Profile/Readme.md
+            echo "<!-- LANG_DATA:${{ env.LANG_BREAKDOWN }} -->" >> Profile/Readme.md
+          fi
           
       - name: Commit changes
         env:

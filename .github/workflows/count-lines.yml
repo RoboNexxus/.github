@@ -369,7 +369,9 @@ PYEOF
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions[bot]"
           git add Profile/Readme.md
-          git diff --quiet && git diff --staged --quiet || \
-            git commit -m "📊 Update stats: ${{ env.TOTAL_LINES }} lines across ${{ env.REPO_COUNT }} repos" && \
+
+          if ! (git diff --quiet && git diff --staged --quiet); then
+            git commit -m "📊 Update stats: ${{ env.TOTAL_LINES }} lines across ${{ env.REPO_COUNT }} repos"
             git pull --rebase origin main
             git push https://x-access-token:${TOKEN}@github.com/RoboNexxus/.github HEAD:main
+          fi

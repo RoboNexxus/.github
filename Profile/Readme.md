@@ -1,235 +1,182 @@
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,40:001f3f,100:00d9ff&height=230&section=header&text=RoboNexus&fontSize=88&fontColor=ffffff&animation=fadeIn&fontAlignY=42&desc=Official%20Robotics%20Club%20%E2%80%A2%20AIS-46%20%E2%80%A2%20Est.%202024&descAlignY=65&descSize=17&descColor=00d9ff" width="100%"/>
+
 <div align="center">
 
-# RoboNexus
-### Official Robotics Club | AIS-46
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=20&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&random=false&width=650&lines=Building+the+Future%2C+One+Robot+at+a+Time+%F0%9F%A4%96;Robotics+%7C+AI+%7C+Innovation+%7C+STEM+%F0%9F%9A%80;Join+us+and+build+something+amazing!+%E2%9A%A1)](https://git.io/typing-svg)
 
-**Building the Future, One Robot at a Time**
+<br>
 
-[![Website](https://img.shields.io/badge/🌐_Website-robonexxus.netlify.app-00d9ff?style=flat-square)](https://robonexxus.netlify.app)
-[![Contact](https://img.shields.io/badge/📧_Contact-Get_In_Touch-00d9ff?style=flat-square)](https://robonexxus.netlify.app/src/html/contact)
-![Est. 2024](https://img.shields.io/badge/Est.-2024-00d9ff?style=flat-square)
-
----
+[![Website](https://img.shields.io/badge/🌐_Website-robonexxus.netlify.app-00d9ff?style=for-the-badge)](https://robonexxus.netlify.app)
+[![Contact](https://img.shields.io/badge/📧_Contact-Get_In_Touch-005f7a?style=for-the-badge)](https://robonexxus.netlify.app/src/html/contact)
+[![GitHub Org](https://img.shields.io/badge/GitHub-RoboNexxus-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RoboNexxus)
+![Est. 2024](https://img.shields.io/badge/Est.-2024-003049?style=for-the-badge)
 
 </div>
 
-## 📖 About Us
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
-**RoboNexus** is the official robotics club of AIS-46, founded in 2024. We are a dynamic community of students passionate about exploring robotics, artificial intelligence, and innovative technologies through hands-on learning and competitive experiences.
+## 🤖 About RoboNexus
 
-### Mission Statement
-To empower students with practical skills in robotics and technology while fostering creativity, critical thinking, teamwork, and a genuine passion for innovation.
-
-### Our Vision
-Creating a collaborative learning environment where students explore cutting-edge technology, develop real-world solutions, and build foundations for successful STEM careers.
-
----
-
-## 🎯 What We Offer
-
-### 🤖 Hands-On Robotics
-Design, build, and program robots for competitions and educational showcases. Members gain practical experience in mechanical design, electronics integration, and autonomous systems.
-
-### 💻 Technical Workshops
-Regular sessions covering programming fundamentals, circuit design, 3D modeling, and emerging technologies. Our workshops cater to all skill levels, from beginners to advanced practitioners.
-
-### 🏆 Competitive Excellence
-Participate in regional and national robotics competitions. We provide mentorship, resources, and team support to help members excel in competitive environments.
-
-### 🚀 Innovation Projects
-Student-led initiatives that address real-world challenges. Teams collaborate on original projects from concept through prototype development and presentation.
-
----
-
-## 💡 Technical Focus Areas
+**RoboNexus** is the official robotics club of **AIS-46**, founded in 2024. We are a dynamic community of students passionate about exploring robotics, artificial intelligence, and innovative technologies through hands-on learning and competitive experiences.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### Robotics & Engineering
-- Mechanical design and fabrication
-- Sensor integration and calibration
-- Actuator systems and control
-- Autonomous navigation algorithms
-- Competition-ready robot development
-
-### Programming & AI
-- Python, C++, and embedded C
-- Machine learning fundamentals
-- Computer vision applications
-- Algorithm optimization
-- Robotic control systems
+### 🎯 Mission
+To empower students with practical skills in robotics and technology while fostering creativity, critical thinking, teamwork, and a genuine passion for innovation.
 
 </td>
 <td width="50%" valign="top">
 
-### Electronics & IoT
-- Circuit design and PCB development
-- Microcontroller programming
-- Arduino and Raspberry Pi projects
-- Sensor networks and IoT systems
-- Power management and regulation
-
-### Innovation & Research
-- Student-driven research projects
-- Rapid prototyping techniques
-- Technical documentation
-- Presentation and demonstration skills
-- Interdisciplinary collaboration
+### 🌟 Vision
+Creating a collaborative learning environment where students explore cutting-edge technology, develop real-world solutions, and build foundations for successful STEM careers.
 
 </td>
 </tr>
 </table>
 
----
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
-## 🏆 Milestones & Achievements
-
-| Year | Achievement | Description |
-|:----:|-------------|-------------|
-| **2024** | Club Founded | Established RoboNexus at AIS-46 |
-| **2025** | NYRC'25 Competition | First competitive robotics competition |
-| **2025** | Automation Project | Deployed certificate mailer system (222+ recipients) |
-| **2025** | Digital Presence | Launched official website and online platforms |
-
----
-
-## 🛠️ Technology Stack
+## ⚡ What We Do
 
 <div align="center">
 
-**Programming Languages**
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-
-**Hardware Platforms**
-
-![Arduino](https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=white)
-![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?style=flat-square&logo=raspberry-pi&logoColor=white)
-![ESP32](https://img.shields.io/badge/ESP32-000000?style=flat-square&logo=espressif&logoColor=white)
-
-**Development Tools**
-
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)
-![Fusion 360](https://img.shields.io/badge/Fusion_360-FF6B00?style=flat-square&logo=autodesk&logoColor=white)
+| 🤖 Hands-On Robotics | 💻 Tech Workshops | 🏆 Competitions | 🚀 Innovation Projects |
+|:-------------------:|:----------------:|:---------------:|:---------------------:|
+| Design, build & program real robots | Python, C++, circuit design & 3D modeling | Regional & national robotics events | Student-led solutions to real-world problems |
 
 </div>
 
----
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
-## 👥 Membership Information
-
-### Why Join RoboNexus?
-
-- **Learn**: Master cutting-edge robotics and technology through structured curriculum
-- **Build**: Create impactful projects with collaborative teams
-- **Compete**: Represent your school in prestigious robotics competitions
-- **Network**: Connect with industry professionals and like-minded innovators
-- **Grow**: Develop technical, leadership, and teamwork skills
-
-### How to Join
-
-We welcome students of all skill levels and backgrounds. Whether you're a complete beginner or an experienced maker, there's a place for you in RoboNexus.
-
-**📧 Contact Us:** [robonexxus.netlify.app/src/html/contact](https://robonexxus.netlify.app/src/html/contact)  
-**🌐 Learn More:** [robonexxus.netlify.app](https://robonexxus.netlify.app)
-
----
-
-## 📚 Resources & Links
-
-| Resource | Description | URL |
-|----------|-------------|-----|
-| 🌐 **Official Website** | Club information, events, and updates | [robonexxus.netlify.app](https://robonexxus.netlify.app) |
-| 📧 **Contact Page** | Get in touch with club leadership | [Contact Form](https://robonexxus.netlify.app/src/html/contact) |
-| 💻 **GitHub Organization** | Open-source projects and code repositories | [github.com/RoboNexxus](https://github.com/RoboNexxus) |
-| 📱 **Community Discord** | Member discussions and collaboration | *Coming Soon* |
-
----
-
-## 🌟 Core Values
+## 🛠️ Tech Stack
 
 <div align="center">
 
-| **Collaboration** | **Innovation** | **Excellence** | **Learning** |
-|:-----------------:|:--------------:|:--------------:|:------------:|
-| We achieve more together than alone | We embrace experimentation and creative thinking | We strive for quality in everything we build | We grow through hands-on experience |
+**Languages & Platforms**
+
+[![Skills](https://skillicons.dev/icons?i=py,cpp,js,ts,html,css,arduino,raspberrypi,git,github,vscode,linux&theme=dark&perline=6)](https://skillicons.dev)
 
 </div>
 
----
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
 ## 📊 Organization Statistics
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=RoboNexxus&show_icons=true&theme=react&hide_border=true&bg_color=0d1117&title_color=00d9ff&icon_color=00d9ff&text_color=c9d1d9&count_private=true)
-
-### 💻 Code Statistics (All Repositories)
-
 <table>
 <tr>
-<td align="center">
-<img src="https://img.shields.io/badge/Total_Lines-55876-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
-<br>
-<sub>Across all 5 repositories</sub>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/Total_Lines-55%2C876-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
+<br><sub>📄 Lines of Code</sub>
 </td>
-<td align="center">
-<img src="https://img.shields.io/badge/Languages-Python_|_C++_|_JS-00d9ff?style=for-the-badge&logo=code&logoColor=white" alt="Languages"/>
-<br>
-<sub>Primary languages</sub>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/Repositories-5-00d9ff?style=for-the-badge&logo=github&logoColor=white" alt="Repos"/>
+<br><sub>📦 Active Repositories</sub>
 </td>
-<td align="center">
-<img src="https://img.shields.io/badge/Projects-Active-00d9ff?style=for-the-badge&logo=github&logoColor=white" alt="Projects"/>
-<br>
-<sub>In development</sub>
+<td align="center" width="33%">
+<img src="https://img.shields.io/badge/Since-2024-00d9ff?style=for-the-badge&logo=rocket&logoColor=white" alt="Since"/>
+<br><sub>🗓️ Years Active</sub>
 </td>
 </tr>
 </table>
 
-*Line count updates automatically via GitHub Actions*
+<br>
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=RoboNexxus&show_icons=true&theme=react&hide_border=true&bg_color=0d1117&title_color=00d9ff&icon_color=00d9ff&text_color=c9d1d9&count_private=true)
+
+<br>
+
+### 🌐 Language Breakdown
+
+<table>
+<tr>
+<th>Language</th>
+<th>Lines of Code</th>
+<th>Share</th>
+</tr>
+<!-- LANG_TABLE_START -->
+<tr><td>🐍 Python</td><td>19,251</td><td>█████████████░░░░░░░ 46.9%</td></tr>
+<tr><td>📄 JSON</td><td>11,922</td><td>████████░░░░░░░░░░░░ 29.0%</td></tr>
+<tr><td>🎨 CSS</td><td>3,141</td><td>██░░░░░░░░░░░░░░░░░░ 7.7%</td></tr>
+<tr><td>📝 Markdown</td><td>2,299</td><td>█░░░░░░░░░░░░░░░░░░░ 5.6%</td></tr>
+<tr><td>🔷 TypeScript</td><td>2,291</td><td>█░░░░░░░░░░░░░░░░░░░ 5.6%</td></tr>
+<tr><td>🟨 JavaScript</td><td>1,815</td><td>█░░░░░░░░░░░░░░░░░░░ 4.4%</td></tr>
+<!-- LANG_TABLE_END -->
+</table>
 
 </div>
 
----
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
-## 🚀 Current Projects
-
-We're actively developing innovative projects across multiple domains:
-
-- 🤖 Competition robot development for upcoming events
-- 🌐 Web platform enhancements and features
-- 🔧 Automation tools for club operations
-- 📚 Educational content and workshop materials
-
-*Detailed project showcases coming soon. Follow our GitHub for updates.*
-
----
-
-## 📞 Get In Touch
+## 👥 Contributor Leaderboard
 
 <div align="center">
 
-**Interested in robotics? Want to learn more about RoboNexus?**
+*Who's building RoboNexus — ranked by total commits across all repositories*
 
-We'd love to hear from you!
+<!-- CONTRIBUTORS_TABLE_START -->
+| Rank | Contributor | Commits | Lines Added | Profile |
+|:----:|------------|:-------:|:-----------:|:-------:|
+| 🏅 | *Calculating...* | — | — | — |
+<!-- CONTRIBUTORS_TABLE_END -->
 
-[**Visit Our Website**](https://robonexxus.netlify.app) | [**Contact Us**](https://robonexxus.netlify.app/src/html/contact) | [**Explore Our Code**](https://github.com/RoboNexxus)
-
----
-
-### RoboNexus | Est. 2024 | AIS-46
-
-*Inspiring the next generation of innovators through hands-on learning, collaboration, and excellence in STEM.*
-
-![Profile Views](https://komarev.com/ghpvc/?username=RoboNexxus&label=Profile%20views&color=00d9ff&style=flat-square)
+<sub>🔄 Stats refresh automatically every 2 hours via GitHub Actions</sub>
 
 </div>
+
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
+
+## 🏆 Milestones
+
+<div align="center">
+
+| Year | 🎖️ Achievement | Description |
+|:----:|:--------------|:------------|
+| **2024** | 🎉 Club Founded | Established RoboNexus at AIS-46 |
+| **2025** | 🤖 NYRC'25 | First competitive robotics competition |
+| **2025** | ⚙️ Automation Project | Deployed certificate mailer (222+ recipients) |
+| **2025** | 🌐 Digital Presence | Launched official website and online platforms |
+
+</div>
+
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
+
+## 🚀 Current Projects
+
+<div align="center">
+
+| Project | Status | Description |
+|---------|:------:|-------------|
+| 🤖 Competition Robot | 🟢 Active | Development for upcoming robotics events |
+| 🌐 Web Platform | 🟢 Active | Website enhancements and new features |
+| ⚙️ Automation Tools | 🟡 In Progress | Club operations automation suite |
+| 📚 Workshop Materials | 🟡 In Progress | Educational content and curriculum |
+
+</div>
+
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
+
+## 📞 Join RoboNexus
+
+<div align="center">
+
+**Interested in robotics? We welcome all skill levels — beginners to experts!**
+
+<br>
+
+[![Join Us](https://img.shields.io/badge/🚀_Join_Us-Contact_Now-00d9ff?style=for-the-badge)](https://robonexxus.netlify.app/src/html/contact)
+[![Website](https://img.shields.io/badge/🌐_Explore-Our_Website-005f7a?style=for-the-badge)](https://robonexxus.netlify.app)
+[![Code](https://img.shields.io/badge/💻_View-Our_Code-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RoboNexxus)
+
+<br>
+
+![Profile Views](https://komarev.com/ghpvc/?username=RoboNexxus&label=Profile+Views&color=00d9ff&style=for-the-badge)
+
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d9ff,60:001f3f,100:0d1117&height=120&section=footer" width="100%"/>
 
 <!-- LANG_DATA:Python:19251,JSON:11922,CSS:3141,Markdown:2299,TypeScript:2291,JavaScript:1815,HTML:1343,SQL:301,YAML:138,TOML:60 -->

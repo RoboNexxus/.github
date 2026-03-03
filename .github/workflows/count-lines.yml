@@ -371,4 +371,5 @@ PYEOF
           git add Profile/Readme.md
           git diff --quiet && git diff --staged --quiet || \
             git commit -m "📊 Update stats: ${{ env.TOTAL_LINES }} lines across ${{ env.REPO_COUNT }} repos" && \
-            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main
+            git pull --rebase origin main
+            git push https://x-access-token:${TOKEN}@github.com/RoboNexxus/.github HEAD:main

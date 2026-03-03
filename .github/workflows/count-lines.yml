@@ -2,7 +2,7 @@ name: Count Lines of Code
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # Run every Sunday at midnight
+    - cron: '0 */2 * * *' # Run every 2 hours
   workflow_dispatch: # Allow manual trigger
   repository_dispatch: # Triggered by other repos on push
     types: [code-update]
@@ -31,29 +31,21 @@ jobs:
       - name: Get all repos
         id: repos
         run: |
-          # Check if PAT_TOKEN is available for private repos
           if [ -n "${{ secrets.PAT_TOKEN }}" ]; then
-            echo "✅ Using PAT_TOKEN to access all repositories (public + private)"
+            echo "✅ Using PAT_TOKEN (public + private repos)"
             TOKEN="${{ secrets.PAT_TOKEN }}"
           else
             echo "⚠️ Using GITHUB_TOKEN (public repos only)"
-            echo "To count private repos, add a PAT_TOKEN secret with 'repo' scope"
             TOKEN="${{ secrets.GITHUB_TOKEN }}"
           fi
           
-          # Get all repos from the organization (including private if PAT is used)
           curl -H "Authorization: token $TOKEN" \
                -H "Accept: application/vnd.github.v3+json" \
-               https://api.github.com/orgs/RoboNexxus/repos?per_page=100 > repos.json
+               "https://api.github.com/orgs/RoboNexxus/repos?per_page=100" > repos.json
           
-          # Debug: Show API response
-          echo "API Response (first 20 lines):"
-          head -20 repos.json
-          
-          # Check if repos.json is an array before extracting names
           if jq -e 'type == "array"' repos.json > /dev/null 2>&1; then
             jq -r '.[].name' repos.json > repo_list.txt
-            echo "Successfully extracted $(wc -l < repo_list.txt) repositories:"
+            echo "Found $(wc -l < repo_list.txt) repositories:"
             cat repo_list.txt
           else
             echo "ERROR: API did not return a repo array."
@@ -61,74 +53,95 @@ jobs:
             exit 1
           fi
           
-      - name: Clone and count lines
+      - name: Clone, count lines, and gather contributor stats
         env:
           TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
-          total_lines=0
           total_code=0
           total_comments=0
           total_blanks=0
           repo_count=0
           
-          # Create temp directory
           mkdir -p temp_repos
           
-          # Associative array for per-language lines
           declare -A lang_lines
+          declare -A contributor_commits
+          declare -A contributor_lines
           
           echo "================================"
-          echo "Starting to count lines..."
+          echo "Starting analysis..."
           echo "================================"
           
-          # Clone each repo and count lines
           while IFS= read -r repo; do
             echo ""
             echo "📦 Processing: $repo"
-            git clone https://x-access-token:${TOKEN}@github.com/RoboNexxus/$repo.git temp_repos/$repo 2>/dev/null || {
+            git clone --quiet https://x-access-token:${TOKEN}@github.com/RoboNexxus/$repo.git temp_repos/$repo 2>/dev/null || {
               echo "  ❌ Failed to clone $repo"
               continue
             }
             
-            # Count lines using cloc
+            # ── Lines of code via cloc ──────────────────────────────
             cloc temp_repos/$repo --json --quiet > cloc_output.json 2>/dev/null || {
               echo "  ⚠️ No code found in $repo"
               rm -rf temp_repos/$repo
               continue
             }
             
-            # Extract totals
-            code=$(cat cloc_output.json | jq -r '.SUM.code // 0')
-            comments=$(cat cloc_output.json | jq -r '.SUM.comment // 0')
-            blanks=$(cat cloc_output.json | jq -r '.SUM.blank // 0')
+            code=$(jq -r '.SUM.code // 0' cloc_output.json)
+            comments=$(jq -r '.SUM.comment // 0' cloc_output.json)
+            blanks=$(jq -r '.SUM.blank // 0' cloc_output.json)
             
             if [ "$code" -gt 0 ]; then
               total_code=$((total_code + code))
               total_comments=$((total_comments + comments))
               total_blanks=$((total_blanks + blanks))
               repo_count=$((repo_count + 1))
-              echo "  ✅ $repo: $code lines of code"
+              echo "  ✅ Code: $code lines"
               
-              # Aggregate per-language lines (code only)
+              # Per-language breakdown
               for lang in $(jq -r 'keys[] | select(. != "header" and . != "SUM")' cloc_output.json); do
                 lc=$(jq -r ".[\"$lang\"].code // 0" cloc_output.json)
                 lang_lines[$lang]=$(( ${lang_lines[$lang]:-0} + lc ))
               done
-            else
-              echo "  ⚠️ $repo: No code detected"
             fi
             
-            # Clean up
+            # ── Contributor commits via git shortlog ─────────────────
+            while IFS=$'\t' read -r commits author; do
+              commits=$(echo "$commits" | tr -d ' ')
+              if [ -n "$author" ] && [ -n "$commits" ]; then
+                contributor_commits["$author"]=$(( ${contributor_commits["$author"]:-0} + commits ))
+              fi
+            done < <(git -C temp_repos/$repo shortlog -sn HEAD 2>/dev/null)
+            
+            # ── Contributor lines added ──────────────────────────────
+            # Single-pass: read author name, then accumulate numstat additions
+            current_author=""
+            while IFS= read -r line; do
+              # If the line is only text (author name line from --pretty=format:"%an")
+              if [[ "$line" =~ ^[^0-9[:space:]] ]] || [[ "$line" =~ ^[A-Za-z] ]]; then
+                # Check it's not a numstat line (numstat lines start with digits or -)
+                if ! [[ "$line" =~ ^[0-9-]+[[:space:]] ]]; then
+                  current_author="$line"
+                  continue
+                fi
+              fi
+              # Numstat line: "added  deleted  filename"
+              if [[ "$line" =~ ^([0-9]+)[[:space:]]+([0-9-]+)[[:space:]] ]] && [ -n "$current_author" ]; then
+                added="${BASH_REMATCH[1]}"
+                contributor_lines["$current_author"]=$(( ${contributor_lines["$current_author"]:-0} + added ))
+              fi
+            done < <(git -C temp_repos/$repo log --pretty=format:"%an" --numstat 2>/dev/null)
+            
             rm -rf temp_repos/$repo
           done < repo_list.txt
           
           total_lines=$((total_code + total_comments + total_blanks))
           
-          # Format numbers with commas
+          # Format with commas
           formatted_lines=$(printf "%'d" $total_lines)
           formatted_code=$(printf "%'d" $total_code)
           
-          # Build language breakdown string sorted by lines descending
+          # Build language breakdown (top 10, sorted)
           lang_json=""
           for lang in "${!lang_lines[@]}"; do
             lang_json+="${lang_lines[$lang]} $lang\n"
@@ -137,38 +150,172 @@ jobs:
           
           echo ""
           echo "================================"
-          echo "📊 FINAL RESULTS"
+          echo "📊 RESULTS"
           echo "================================"
-          echo "Total Lines: $formatted_lines"
-          echo "Code Lines: $formatted_code"
-          echo "Comments: $total_comments"
-          echo "Blanks: $total_blanks"
-          echo "Repositories: $repo_count"
-          echo "Languages: $lang_breakdown"
+          echo "Total Lines : $formatted_lines"
+          echo "Code Lines  : $formatted_code"
+          echo "Comments    : $total_comments"
+          echo "Blanks      : $total_blanks"
+          echo "Repos       : $repo_count"
+          echo "Languages   : $lang_breakdown"
           echo "================================"
           
+          # Save to env
           echo "TOTAL_LINES=$formatted_lines" >> $GITHUB_ENV
-          echo "TOTAL_CODE=$formatted_code" >> $GITHUB_ENV
-          echo "REPO_COUNT=$repo_count" >> $GITHUB_ENV
+          echo "TOTAL_CODE=$formatted_code"   >> $GITHUB_ENV
+          echo "REPO_COUNT=$repo_count"       >> $GITHUB_ENV
           echo "LANG_BREAKDOWN=$lang_breakdown" >> $GITHUB_ENV
+          
+          # ── Build contributor table rows ─────────────────────────
+          echo ""
+          echo "👥 CONTRIBUTOR STATS"
+          echo "================================"
+          
+          # Sort contributors by commits descending, write to temp file
+          > contributor_sorted.txt
+          for author in "${!contributor_commits[@]}"; do
+            commits=${contributor_commits["$author"]}
+            lines=${contributor_lines["$author"]:-0}
+            echo "$commits $lines $author" >> contributor_sorted.txt
+          done
+          sort -rn contributor_sorted.txt > contributor_ranked.txt
+          cat contributor_ranked.txt
+          
+          # Build markdown table rows (top 10)
+          rank=1
+          TABLE_ROWS=""
+          while IFS= read -r entry; do
+            commits=$(echo "$entry" | awk '{print $1}')
+            lines_added=$(echo "$entry" | awk '{print $2}')
+            author=$(echo "$entry" | cut -d' ' -f3-)
+            
+            # Rank emoji
+            if [ "$rank" -eq 1 ]; then medal="🥇"
+            elif [ "$rank" -eq 2 ]; then medal="🥈"
+            elif [ "$rank" -eq 3 ]; then medal="🥉"
+            else medal="**#$rank**"
+            fi
+            
+            # Format lines with commas
+            fmt_lines=$(printf "%'d" $lines_added)
+            fmt_commits=$(printf "%'d" $commits)
+            
+            # GitHub profile link (replace spaces with dashes for common name formats)
+            gh_handle=$(echo "$author" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
+            
+            TABLE_ROWS+="| $medal | $author | $fmt_commits | $fmt_lines | [@$gh_handle](https://github.com/$gh_handle) |"$'\n'
+            
+            rank=$((rank + 1))
+            [ "$rank" -gt 10 ] && break
+          done < contributor_ranked.txt
+          
+          # Write contributor table to file for multiline env handling
+          {
+            echo "| Rank | Contributor | Commits | Lines Added | Profile |"
+            echo "|:----:|------------|:-------:|:-----------:|:-------:|"
+            echo "$TABLE_ROWS"
+          } > contributor_table.txt
+          
+          echo "CONTRIBUTOR_TABLE_BUILT=true" >> $GITHUB_ENV
           
       - name: Update README
         run: |
-          # Update the README with the new counts
-          sed -i "s/Total_Lines-Calculating\.\.\./Total_Lines-${{ env.TOTAL_LINES }}/g" Profile/Readme.md
-          sed -i "s/Calculating\.\.\.-00d9ff/Calculating...-00d9ff/g" Profile/Readme.md || true
-          sed -i "s/Total_Lines-[0-9,]*-00d9ff/Total_Lines-${{ env.TOTAL_LINES }}-00d9ff/g" Profile/Readme.md || true
-          sed -i "s/Total_Lines-[0-9,]*/Total_Lines-${{ env.TOTAL_LINES }}/g" Profile/Readme.md || true
-          sed -i "s/Across all [0-9]* repositories/Across all ${{ env.REPO_COUNT }} repositories/g" Profile/Readme.md || true
-          sed -i "s/Across all repositories/Across all ${{ env.REPO_COUNT }} repositories/g" Profile/Readme.md || true
+          README="Profile/Readme.md"
           
-          # Update or insert language breakdown comment (parseable by website JS)
-          # Format: <!-- LANG_DATA:Python:12345,JavaScript:6789,CSS:3456 -->
-          if grep -q '<!-- LANG_DATA:' Profile/Readme.md; then
-            sed -i "s/<!-- LANG_DATA:.* -->/<!-- LANG_DATA:${{ env.LANG_BREAKDOWN }} -->/" Profile/Readme.md
+          # ── 1. Update total lines badge ─────────────────────────
+          sed -i "s|Total_Lines-[0-9,]*-00d9ff|Total_Lines-${{ env.TOTAL_LINES }}-00d9ff|g" "$README" || true
+          sed -i "s|Total_Lines-Calculating\.\.\.|Total_Lines-${{ env.TOTAL_LINES }}|g" "$README" || true
+          
+          # ── 2. Update repo count badge ──────────────────────────
+          sed -i "s|Repositories-[0-9]*-00d9ff|Repositories-${{ env.REPO_COUNT }}-00d9ff|g" "$README" || true
+          sed -i "s|Across all [0-9]* repositories|Across all ${{ env.REPO_COUNT }} repositories|g" "$README" || true
+          sed -i "s|Across all repositories|Across all ${{ env.REPO_COUNT }} repositories|g" "$README" || true
+          
+          # ── 3. Update LANG_DATA comment ─────────────────────────
+          if grep -q '<!-- LANG_DATA:' "$README"; then
+            sed -i "s|<!-- LANG_DATA:.* -->|<!-- LANG_DATA:${{ env.LANG_BREAKDOWN }} -->|" "$README"
           else
-            echo "" >> Profile/Readme.md
-            echo "<!-- LANG_DATA:${{ env.LANG_BREAKDOWN }} -->" >> Profile/Readme.md
+            echo "" >> "$README"
+            echo "<!-- LANG_DATA:${{ env.LANG_BREAKDOWN }} -->" >> "$README"
+          fi
+          
+          # ── 4. Update language table ────────────────────────────
+          # Build lang table rows from LANG_BREAKDOWN env var
+          python3 - <<'PYEOF'
+          import os, re
+          
+          readme_path = "Profile/Readme.md"
+          lang_breakdown = os.environ.get("LANG_BREAKDOWN", "")
+          
+          if not lang_breakdown:
+              print("No lang breakdown, skipping lang table update")
+              exit(0)
+          
+          # Parse lang data
+          lang_icons = {
+              "Python": "🐍", "JavaScript": "🟨", "TypeScript": "🔷",
+              "CSS": "🎨", "HTML": "🌐", "JSON": "📄", "Markdown": "📝",
+              "SQL": "🗄️", "YAML": "⚙️", "TOML": "🔧", "C++": "⚙️",
+              "C": "🔵", "Shell": "🐚", "Dockerfile": "🐳"
+          }
+          
+          pairs = lang_breakdown.split(",")
+          total = sum(int(p.split(":")[1]) for p in pairs if ":" in p)
+          
+          rows = []
+          for pair in pairs:
+              if ":" not in pair:
+                  continue
+              lang, count = pair.split(":", 1)
+              count = int(count)
+              pct = count / total * 100 if total > 0 else 0
+              filled = int(pct / 5)
+              bar = "█" * filled + "░" * (20 - filled)
+              icon = lang_icons.get(lang, "💾")
+              fmt_count = f"{count:,}"
+              rows.append(f"<tr><td>{icon} {lang}</td><td>{fmt_count}</td><td>{bar} {pct:.1f}%</td></tr>")
+          
+          new_block = "\n".join(rows)
+          
+          with open(readme_path, "r") as f:
+              content = f.read()
+          
+          content = re.sub(
+              r"<!-- LANG_TABLE_START -->.*?<!-- LANG_TABLE_END -->",
+              f"<!-- LANG_TABLE_START -->\n{new_block}\n<!-- LANG_TABLE_END -->",
+              content, flags=re.DOTALL
+          )
+          
+          with open(readme_path, "w") as f:
+              f.write(content)
+          
+          print("✅ Language table updated")
+          PYEOF
+          
+          # ── 5. Update contributor table ─────────────────────────
+          if [ -f contributor_table.txt ]; then
+            python3 - <<'PYEOF'
+          import re
+          
+          readme_path = "Profile/Readme.md"
+          
+          with open("contributor_table.txt", "r") as f:
+              table = f.read().strip()
+          
+          with open(readme_path, "r") as f:
+              content = f.read()
+          
+          content = re.sub(
+              r"<!-- CONTRIBUTORS_TABLE_START -->.*?<!-- CONTRIBUTORS_TABLE_END -->",
+              f"<!-- CONTRIBUTORS_TABLE_START -->\n{table}\n<!-- CONTRIBUTORS_TABLE_END -->",
+              content, flags=re.DOTALL
+          )
+          
+          with open(readme_path, "w") as f:
+              f.write(content)
+          
+          print("✅ Contributor table updated")
+          PYEOF
           fi
           
       - name: Commit changes
@@ -178,4 +325,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions[bot]"
           git add Profile/Readme.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "📊 Update lines of code count: ${{ env.TOTAL_LINES }} lines across ${{ env.REPO_COUNT }} repos" && git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main)
+          git diff --quiet && git diff --staged --quiet || \
+            git commit -m "📊 Update stats: ${{ env.TOTAL_LINES }} lines across ${{ env.REPO_COUNT }} repos" && \
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:main

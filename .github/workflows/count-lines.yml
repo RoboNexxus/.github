@@ -166,55 +166,99 @@ jobs:
           echo "REPO_COUNT=$repo_count"       >> $GITHUB_ENV
           echo "LANG_BREAKDOWN=$lang_breakdown" >> $GITHUB_ENV
           
-          # ── Build contributor table rows ─────────────────────────
+          # ── Build contributor data file (raw, for Python to process) ──
           echo ""
           echo "👥 CONTRIBUTOR STATS"
           echo "================================"
-          
-          # Sort contributors by commits descending, write to temp file
-          > contributor_sorted.txt
+
+          > contributor_raw.txt
           for author in "${!contributor_commits[@]}"; do
             commits=${contributor_commits["$author"]}
             lines=${contributor_lines["$author"]:-0}
-            echo "$commits $lines $author" >> contributor_sorted.txt
+            # Use tab separator so names with spaces are safe
+            printf "%s\t%s\t%s\n" "$commits" "$lines" "$author" >> contributor_raw.txt
           done
-          sort -rn contributor_sorted.txt > contributor_ranked.txt
-          cat contributor_ranked.txt
+          sort -rn contributor_raw.txt
           
-          # Build markdown table rows (top 10)
-          rank=1
-          TABLE_ROWS=""
-          while IFS= read -r entry; do
-            commits=$(echo "$entry" | awk '{print $1}')
-            lines_added=$(echo "$entry" | awk '{print $2}')
-            author=$(echo "$entry" | cut -d' ' -f3-)
-            
-            # Rank emoji
-            if [ "$rank" -eq 1 ]; then medal="🥇"
-            elif [ "$rank" -eq 2 ]; then medal="🥈"
-            elif [ "$rank" -eq 3 ]; then medal="🥉"
-            else medal="**#$rank**"
-            fi
-            
-            # Format lines with commas
-            fmt_lines=$(printf "%'d" $lines_added)
-            fmt_commits=$(printf "%'d" $commits)
-            
-            # GitHub profile link (replace spaces with dashes for common name formats)
-            gh_handle=$(echo "$author" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
-            
-            TABLE_ROWS+="| $medal | $author | $fmt_commits | $fmt_lines | [@$gh_handle](https://github.com/$gh_handle) |"$'\n'
-            
-            rank=$((rank + 1))
-            [ "$rank" -gt 10 ] && break
-          done < contributor_ranked.txt
-          
-          # Write contributor table to file for multiline env handling
-          {
-            echo "| Rank | Contributor | Commits | Lines Added | Profile |"
-            echo "|:----:|------------|:-------:|:-----------:|:-------:|"
-            echo "$TABLE_ROWS"
-          } > contributor_table.txt
+          # Use Python to cleanly build the markdown table
+          python3 - <<'PYEOF'
+import re
+
+BOT_PATTERNS = [
+    r'\[bot\]', r'^github-actions', r'^dependabot', r'^renovate',
+    r'^snyk-bot', r'^semantic-release'
+]
+
+# Merge duplicate/alternate names into one canonical name
+NAME_ALIASES = {
+    "Atharv M":           "Atharv Mandlavdiya",
+    "atharv m":           "Atharv Mandlavdiya",
+    "atharv mandlavdiya": "Atharv Mandlavdiya",
+    "ROBO NEXUS":         "RoboNexus",
+    "robo nexus":         "RoboNexus",
+}
+
+# Hardcoded GitHub usernames (display name → real GitHub handle)
+GITHUB_HANDLES = {
+    "Atharv Mandlavdiya": "AtharvM02222",
+    "RoboNexus":          "RoboNexxus",
+}
+
+MEDALS = {1: "🥇", 2: "🥈", 3: "🥉"}
+
+# Accumulate into merged dict
+merged = {}  # canonical_name -> [commits, lines]
+
+with open("contributor_raw.txt") as f:
+    for line in f:
+        line = line.strip()
+        if not line:
+            continue
+        parts = line.split("\t", 2)
+        if len(parts) < 3:
+            continue
+        commits, lines_added, author = parts
+        # Skip bots
+        if any(re.search(p, author, re.IGNORECASE) for p in BOT_PATTERNS):
+            print(f"  🤖 Skipping bot: {author}")
+            continue
+        # Resolve alias
+        canonical = NAME_ALIASES.get(author, NAME_ALIASES.get(author.lower(), author))
+        if canonical not in merged:
+            merged[canonical] = [0, 0]
+        merged[canonical][0] += int(commits)
+        merged[canonical][1] += int(lines_added)
+
+rows = [(v[0], v[1], k) for k, v in merged.items()]
+
+# Sort by commits desc
+rows.sort(key=lambda x: x[0], reverse=True)
+
+table_lines = [
+    "| Rank | Contributor | Commits | Lines Added | Profile |",
+    "|:----:|:-----------|:-------:|:-----------:|:-------:|"
+]
+
+for rank, (commits, lines_added, author) in enumerate(rows[:10], start=1):
+    medal = MEDALS.get(rank, f"**#{rank}**")
+    fmt_commits = f"{commits:,}"
+    fmt_lines   = f"{lines_added:,}"
+    # Use hardcoded handle if available, otherwise auto-generate
+    if author in GITHUB_HANDLES:
+        handle = GITHUB_HANDLES[author]
+    else:
+        handle = re.sub(r'[^a-z0-9-]', '-', author.lower()).strip('-')
+        handle = re.sub(r'-{2,}', '-', handle)
+    table_lines.append(
+        f"| {medal} | {author} | {fmt_commits} | {fmt_lines} | [@{handle}](https://github.com/{handle}) |"
+    )
+    print(f"  #{rank} {author}: {commits} commits, {lines_added} lines")
+
+with open("contributor_table.txt", "w") as f:
+    f.write("\n".join(table_lines) + "\n")
+
+print("✅ Contributor table written")
+PYEOF
           
           echo "CONTRIBUTOR_TABLE_BUILT=true" >> $GITHUB_ENV
           

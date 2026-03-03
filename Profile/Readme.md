@@ -99,10 +99,10 @@ Creating a collaborative learning environment where students explore cutting-edg
 </tr>
 <!-- LANG_TABLE_START -->
 <tr><td>🐍 Python</td><td>20,796</td><td>█████████░░░░░░░░░░░ 47.0%</td></tr>
-<tr><td>📄 JSON</td><td>11,926</td><td>█████░░░░░░░░░░░░░░░ 27.0%</td></tr>
+<tr><td>📄 JSON</td><td>11,926</td><td>█████░░░░░░░░░░░░░░░ 26.9%</td></tr>
 <tr><td>🎨 CSS</td><td>3,141</td><td>█░░░░░░░░░░░░░░░░░░░ 7.1%</td></tr>
 <tr><td>🔷 TypeScript</td><td>2,291</td><td>█░░░░░░░░░░░░░░░░░░░ 5.2%</td></tr>
-<tr><td>📝 Markdown</td><td>2,259</td><td>█░░░░░░░░░░░░░░░░░░░ 5.1%</td></tr>
+<tr><td>📝 Markdown</td><td>2,267</td><td>█░░░░░░░░░░░░░░░░░░░ 5.1%</td></tr>
 <tr><td>🟨 JavaScript</td><td>1,863</td><td>░░░░░░░░░░░░░░░░░░░░ 4.2%</td></tr>
 <tr><td>🌐 HTML</td><td>1,343</td><td>░░░░░░░░░░░░░░░░░░░░ 3.0%</td></tr>
 <tr><td>🗄️ SQL</td><td>325</td><td>░░░░░░░░░░░░░░░░░░░░ 0.7%</td></tr>
@@ -127,7 +127,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 | 🥇 | Atharv Mandlavdiya | 177 | 70981 | [@atharv-mandlavdiya](https://github.com/atharv-mandlavdiya) |
 | 🥈 | ROBO NEXUS | 15 | 15112 | [@robo-nexus](https://github.com/robo-nexus) |
 | 🥉 | Atharv M | 13 | 332 | [@atharv-m](https://github.com/atharv-m) |
-| **#4** | github-actions[bot] | 6 | 10 | [@github-actions[bot]](https://github.com/github-actions[bot]) |
+| **#4** | github-actions[bot] | 7 | 26 | [@github-actions[bot]](https://github.com/github-actions[bot]) |
 | **#5** | robonexusais46 | 3 | 47 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->
 
@@ -187,4 +187,4 @@ Creating a collaborative learning environment where students explore cutting-edg
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d9ff,60:001f3f,100:0d1117&height=120&section=footer" width="100%"/>
 
-<!-- LANG_DATA:Python:20796,JSON:11926,CSS:3141,TypeScript:2291,Markdown:2259,JavaScript:1863,HTML:1343,SQL:325,YAML:247,TOML:60 -->
+<!-- LANG_DATA:Python:20796,JSON:11926,CSS:3141,TypeScript:2291,Markdown:2267,JavaScript:1863,HTML:1343,SQL:325,YAML:247,TOML:60 -->

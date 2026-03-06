@@ -98,16 +98,16 @@ Creating a collaborative learning environment where students explore cutting-edg
 <th>Share</th>
 </tr>
 <!-- LANG_TABLE_START -->
-<tr><td>🐍 Python</td><td>33,170</td><td>██████████░░░░░░░░░░ 52.3%</td></tr>
-<tr><td>📄 JSON</td><td>11,926</td><td>███░░░░░░░░░░░░░░░░░ 18.8%</td></tr>
-<tr><td>📝 Markdown</td><td>9,179</td><td>██░░░░░░░░░░░░░░░░░░ 14.5%</td></tr>
-<tr><td>🎨 CSS</td><td>3,141</td><td>░░░░░░░░░░░░░░░░░░░░ 5.0%</td></tr>
+<tr><td>🐍 Python</td><td>33,610</td><td>██████████░░░░░░░░░░ 52.3%</td></tr>
+<tr><td>📄 JSON</td><td>11,926</td><td>███░░░░░░░░░░░░░░░░░ 18.5%</td></tr>
+<tr><td>📝 Markdown</td><td>9,322</td><td>██░░░░░░░░░░░░░░░░░░ 14.5%</td></tr>
+<tr><td>🎨 CSS</td><td>3,141</td><td>░░░░░░░░░░░░░░░░░░░░ 4.9%</td></tr>
 <tr><td>🔷 TypeScript</td><td>2,291</td><td>░░░░░░░░░░░░░░░░░░░░ 3.6%</td></tr>
 <tr><td>🟨 JavaScript</td><td>1,863</td><td>░░░░░░░░░░░░░░░░░░░░ 2.9%</td></tr>
 <tr><td>🌐 HTML</td><td>1,343</td><td>░░░░░░░░░░░░░░░░░░░░ 2.1%</td></tr>
+<tr><td>🗄️ SQL</td><td>400</td><td>░░░░░░░░░░░░░░░░░░░░ 0.6%</td></tr>
 <tr><td>⚙️ YAML</td><td>357</td><td>░░░░░░░░░░░░░░░░░░░░ 0.6%</td></tr>
 <tr><td>🔧 TOML</td><td>71</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
-<tr><td>💾 Text</td><td>56</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <!-- LANG_TABLE_END -->
 </table>
 
@@ -124,7 +124,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <!-- CONTRIBUTORS_TABLE_START -->
 | Rank | Contributor | Commits | Lines Added | Profile |
 |:----:|:-----------|:-------:|:-----------:|:-------:|
-| 🥇 | Atharv Mandlavdiya | 223 | 213,802 | [@AtharvM02222](https://github.com/AtharvM02222) |
+| 🥇 | Atharv Mandlavdiya | 240 | 216,677 | [@AtharvM02222](https://github.com/AtharvM02222) |
 | 🥈 | RoboNexus | 15 | 15,112 | [@RoboNexxus](https://github.com/RoboNexxus) |
 | 🥉 | robonexusais46 | 3 | 47 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->
@@ -185,4 +185,4 @@ Creating a collaborative learning environment where students explore cutting-edg
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d9ff,60:001f3f,100:0d1117&height=120&section=footer" width="100%"/>
 
-<!-- LANG_DATA:Python:33170,JSON:11926,Markdown:9179,CSS:3141,TypeScript:2291,JavaScript:1863,HTML:1343,YAML:357,TOML:71,Text:56 -->
+<!-- LANG_DATA:Python:33610,JSON:11926,Markdown:9322,CSS:3141,TypeScript:2291,JavaScript:1863,HTML:1343,SQL:400,YAML:357,TOML:71 -->

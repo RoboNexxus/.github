@@ -98,14 +98,14 @@ Creating a collaborative learning environment where students explore cutting-edg
 <th>Share</th>
 </tr>
 <!-- LANG_TABLE_START -->
-<tr><td>🐍 Python</td><td>35,632</td><td>██████████░░░░░░░░░░ 54.0%</td></tr>
-<tr><td>📄 JSON</td><td>11,926</td><td>███░░░░░░░░░░░░░░░░░ 18.1%</td></tr>
-<tr><td>📝 Markdown</td><td>9,180</td><td>██░░░░░░░░░░░░░░░░░░ 13.9%</td></tr>
+<tr><td>🐍 Python</td><td>35,153</td><td>██████████░░░░░░░░░░ 53.6%</td></tr>
+<tr><td>📄 JSON</td><td>11,926</td><td>███░░░░░░░░░░░░░░░░░ 18.2%</td></tr>
+<tr><td>📝 Markdown</td><td>9,182</td><td>██░░░░░░░░░░░░░░░░░░ 14.0%</td></tr>
 <tr><td>🎨 CSS</td><td>3,141</td><td>░░░░░░░░░░░░░░░░░░░░ 4.8%</td></tr>
 <tr><td>🔷 TypeScript</td><td>2,291</td><td>░░░░░░░░░░░░░░░░░░░░ 3.5%</td></tr>
 <tr><td>🟨 JavaScript</td><td>1,863</td><td>░░░░░░░░░░░░░░░░░░░░ 2.8%</td></tr>
 <tr><td>🌐 HTML</td><td>1,343</td><td>░░░░░░░░░░░░░░░░░░░░ 2.0%</td></tr>
-<tr><td>⚙️ YAML</td><td>489</td><td>░░░░░░░░░░░░░░░░░░░░ 0.7%</td></tr>
+<tr><td>⚙️ YAML</td><td>491</td><td>░░░░░░░░░░░░░░░░░░░░ 0.7%</td></tr>
 <tr><td>🔧 TOML</td><td>71</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <tr><td>💾 Text</td><td>66</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <!-- LANG_TABLE_END -->
@@ -124,7 +124,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <!-- CONTRIBUTORS_TABLE_START -->
 | Rank | Contributor | Commits | Lines Added | Profile |
 |:----:|:-----------|:-------:|:-----------:|:-------:|
-| 🥇 | Atharv Mandlavdiya | 252 | 221,890 | [@AtharvM02222](https://github.com/AtharvM02222) |
+| 🥇 | Atharv Mandlavdiya | 256 | 221,930 | [@AtharvM02222](https://github.com/AtharvM02222) |
 | 🥈 | RoboNexus | 15 | 15,112 | [@RoboNexxus](https://github.com/RoboNexxus) |
 | 🥉 | robonexusais46 | 3 | 47 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->
@@ -185,4 +185,4 @@ Creating a collaborative learning environment where students explore cutting-edg
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d9ff,60:001f3f,100:0d1117&height=120&section=footer" width="100%"/>
 
-<!-- LANG_DATA:Python:35632,JSON:11926,Markdown:9180,CSS:3141,TypeScript:2291,JavaScript:1863,HTML:1343,YAML:489,TOML:71,Text:66 -->
+<!-- LANG_DATA:Python:35153,JSON:11926,Markdown:9182,CSS:3141,TypeScript:2291,JavaScript:1863,HTML:1343,YAML:491,TOML:71,Text:66 -->

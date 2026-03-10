@@ -98,15 +98,15 @@ Creating a collaborative learning environment where students explore cutting-edg
 <th>Share</th>
 </tr>
 <!-- LANG_TABLE_START -->
-<tr><td>🐍 Python</td><td>35,359</td><td>██████████░░░░░░░░░░ 53.6%</td></tr>
-<tr><td>📄 JSON</td><td>11,926</td><td>███░░░░░░░░░░░░░░░░░ 18.1%</td></tr>
-<tr><td>📝 Markdown</td><td>9,325</td><td>██░░░░░░░░░░░░░░░░░░ 14.1%</td></tr>
-<tr><td>🎨 CSS</td><td>3,141</td><td>░░░░░░░░░░░░░░░░░░░░ 4.8%</td></tr>
-<tr><td>🔷 TypeScript</td><td>2,291</td><td>░░░░░░░░░░░░░░░░░░░░ 3.5%</td></tr>
-<tr><td>🟨 JavaScript</td><td>1,942</td><td>░░░░░░░░░░░░░░░░░░░░ 2.9%</td></tr>
-<tr><td>🌐 HTML</td><td>1,343</td><td>░░░░░░░░░░░░░░░░░░░░ 2.0%</td></tr>
+<tr><td>🐍 Python</td><td>35,359</td><td>██████████░░░░░░░░░░ 52.9%</td></tr>
+<tr><td>📄 JSON</td><td>11,936</td><td>███░░░░░░░░░░░░░░░░░ 17.8%</td></tr>
+<tr><td>📝 Markdown</td><td>9,325</td><td>██░░░░░░░░░░░░░░░░░░ 13.9%</td></tr>
+<tr><td>🎨 CSS</td><td>3,141</td><td>░░░░░░░░░░░░░░░░░░░░ 4.7%</td></tr>
+<tr><td>🔷 TypeScript</td><td>2,291</td><td>░░░░░░░░░░░░░░░░░░░░ 3.4%</td></tr>
+<tr><td>🌐 HTML</td><td>2,111</td><td>░░░░░░░░░░░░░░░░░░░░ 3.2%</td></tr>
+<tr><td>🟨 JavaScript</td><td>2,077</td><td>░░░░░░░░░░░░░░░░░░░░ 3.1%</td></tr>
 <tr><td>⚙️ YAML</td><td>490</td><td>░░░░░░░░░░░░░░░░░░░░ 0.7%</td></tr>
-<tr><td>🔧 TOML</td><td>75</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
+<tr><td>🔧 TOML</td><td>76</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <tr><td>💾 Text</td><td>71</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <!-- LANG_TABLE_END -->
 </table>
@@ -124,7 +124,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <!-- CONTRIBUTORS_TABLE_START -->
 | Rank | Contributor | Commits | Lines Added | Profile |
 |:----:|:-----------|:-------:|:-----------:|:-------:|
-| 🥇 | Atharv Mandlavdiya | 274 | 222,879 | [@AtharvM02222](https://github.com/AtharvM02222) |
+| 🥇 | Atharv Mandlavdiya | 279 | 224,947 | [@AtharvM02222](https://github.com/AtharvM02222) |
 | 🥈 | RoboNexus | 15 | 15,112 | [@RoboNexxus](https://github.com/RoboNexxus) |
 | 🥉 | robonexusais46 | 3 | 47 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->
@@ -185,4 +185,4 @@ Creating a collaborative learning environment where students explore cutting-edg
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d9ff,60:001f3f,100:0d1117&height=120&section=footer" width="100%"/>
 
-<!-- LANG_DATA:Python:35359,JSON:11926,Markdown:9325,CSS:3141,TypeScript:2291,JavaScript:1942,HTML:1343,YAML:490,TOML:75,Text:71 -->
+<!-- LANG_DATA:Python:35359,JSON:11936,Markdown:9325,CSS:3141,TypeScript:2291,HTML:2111,JavaScript:2077,YAML:490,TOML:76,Text:71 -->

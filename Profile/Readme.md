@@ -70,7 +70,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="https://img.shields.io/badge/Total_Lines-114311-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
+<img src="https://img.shields.io/badge/Total_Lines-114312-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
 <br><sub>📄 Lines of Code</sub>
 </td>
 <td align="center" width="33%">
@@ -126,7 +126,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 | Rank | Contributor | Commits | Lines Added | Profile |
 |:----:|:-----------|:-------:|:-----------:|:-------:|
 | 🥇 | Atharv Mandlavdiya | 292 | 253,548 | [@AtharvM02222](https://github.com/AtharvM02222) |
-| 🥈 | RoboNexus | 16 | 15,119 | [@RoboNexxus](https://github.com/RoboNexxus) |
+| 🥈 | RoboNexus | 17 | 15,120 | [@RoboNexxus](https://github.com/RoboNexxus) |
 | 🥉 | robonexusais46 | 3 | 47 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->
 

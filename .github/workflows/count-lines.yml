@@ -236,12 +236,14 @@ jobs:
         run: |
           README="Profile/Readme.md"
 
-          sed -i "s|Total_Lines-[0-9,]*-00d9ff|Total_Lines-${{ env.TOTAL_LINES }}-00d9ff|g" "$README" || true
-          sed -i "s|Total_Lines-Calculating\.\.\.|Total_Lines-${{ env.TOTAL_LINES }}|g" "$README" || true
+          # URL-encode the comma so the badge URL stays valid
+          TOTAL_LINES_URL=$(echo "${{ env.TOTAL_LINES }}" | sed 's/,/%2C/g')
 
-          sed -i "s|Repositories-[0-9]*-00d9ff|Repositories-${{ env.REPO_COUNT }}-00d9ff|g" "$README" || true
-          sed -i "s|Across all [0-9]* repositories|Across all ${{ env.REPO_COUNT }} repositories|g" "$README" || true
-          sed -i "s|Across all repositories|Across all ${{ env.REPO_COUNT }} repositories|g" "$README" || true
+          # Match both %2C (URL-encoded) and plain comma variants
+          sed -i "s|Total_Lines-[0-9%2C,]*-00d9ff|Total_Lines-${TOTAL_LINES_URL}-00d9ff|g" "$README"
+
+          sed -i "s|Repositories-[0-9]*-00d9ff|Repositories-${{ env.REPO_COUNT }}-00d9ff|g" "$README"
+          sed -i "s|Across all [0-9]* repositories|Across all ${{ env.REPO_COUNT }} repositories|g" "$README"
 
           if grep -q '<!-- LANG_DATA:' "$README"; then
             sed -i "s|<!-- LANG_DATA:.* -->|<!-- LANG_DATA:${{ env.LANG_BREAKDOWN }} -->|" "$README"

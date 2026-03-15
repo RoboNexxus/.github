@@ -69,7 +69,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="https://img.shields.io/badge/Total_Lines-55%2C876-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
+<img src="https://img.shields.io/badge/Total_Lines-114311-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
 <br><sub>📄 Lines of Code</sub>
 </td>
 <td align="center" width="33%">
@@ -105,7 +105,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <tr><td>🔷 TypeScript</td><td>2,291</td><td>░░░░░░░░░░░░░░░░░░░░ 2.9%</td></tr>
 <tr><td>🌐 HTML</td><td>2,104</td><td>░░░░░░░░░░░░░░░░░░░░ 2.7%</td></tr>
 <tr><td>🟨 JavaScript</td><td>2,030</td><td>░░░░░░░░░░░░░░░░░░░░ 2.6%</td></tr>
-<tr><td>⚙️ YAML</td><td>452</td><td>░░░░░░░░░░░░░░░░░░░░ 0.6%</td></tr>
+<tr><td>⚙️ YAML</td><td>451</td><td>░░░░░░░░░░░░░░░░░░░░ 0.6%</td></tr>
 <tr><td>💾 Text</td><td>56</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <tr><td>🔧 TOML</td><td>50</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <!-- LANG_TABLE_END -->
@@ -125,7 +125,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 | Rank | Contributor | Commits | Lines Added | Profile |
 |:----:|:-----------|:-------:|:-----------:|:-------:|
 | 🥇 | Atharv Mandlavdiya | 292 | 253,548 | [@AtharvM02222](https://github.com/AtharvM02222) |
-| 🥈 | RoboNexus | 15 | 15,112 | [@RoboNexxus](https://github.com/RoboNexxus) |
+| 🥈 | RoboNexus | 16 | 15,119 | [@RoboNexxus](https://github.com/RoboNexxus) |
 | 🥉 | robonexusais46 | 3 | 47 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->
 
@@ -185,4 +185,4 @@ Creating a collaborative learning environment where students explore cutting-edg
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d9ff,60:001f3f,100:0d1117&height=120&section=footer" width="100%"/>
 
-<!-- LANG_DATA:Python:47921,JSON:11957,Markdown:9173,CSS:3141,TypeScript:2291,HTML:2104,JavaScript:2030,YAML:452,Text:56,TOML:50 -->
+<!-- LANG_DATA:Python:47921,JSON:11957,Markdown:9173,CSS:3141,TypeScript:2291,HTML:2104,JavaScript:2030,YAML:451,Text:56,TOML:50 -->

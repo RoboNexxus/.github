@@ -70,7 +70,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="https://img.shields.io/badge/Total_Lines-114317-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
+<img src="https://img.shields.io/badge/Total_Lines-114120-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
 <br><sub>📄 Lines of Code</sub>
 </td>
 <td align="center" width="33%">
@@ -99,7 +99,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <th>Share</th>
 </tr>
 <!-- LANG_TABLE_START -->
-<tr><td>🐍 Python</td><td>47,921</td><td>████████████░░░░░░░░ 60.5%</td></tr>
+<tr><td>🐍 Python</td><td>47,917</td><td>████████████░░░░░░░░ 60.5%</td></tr>
 <tr><td>📄 JSON</td><td>11,957</td><td>███░░░░░░░░░░░░░░░░░ 15.1%</td></tr>
 <tr><td>📝 Markdown</td><td>9,173</td><td>██░░░░░░░░░░░░░░░░░░ 11.6%</td></tr>
 <tr><td>🎨 CSS</td><td>3,141</td><td>░░░░░░░░░░░░░░░░░░░░ 4.0%</td></tr>
@@ -125,7 +125,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <!-- CONTRIBUTORS_TABLE_START -->
 | Rank | Contributor | Commits | Lines Added | Profile |
 |:----:|:-----------|:-------:|:-----------:|:-------:|
-| 🥇 | Atharv Mandlavdiya | 294 | 253,816 | [@AtharvM02222](https://github.com/AtharvM02222) |
+| 🥇 | Atharv Mandlavdiya | 295 | 254,053 | [@AtharvM02222](https://github.com/AtharvM02222) |
 | 🥈 | RoboNexus | 17 | 15,120 | [@RoboNexxus](https://github.com/RoboNexxus) |
 | 🥉 | robonexusais46 | 3 | 47 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->
@@ -186,4 +186,4 @@ Creating a collaborative learning environment where students explore cutting-edg
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d9ff,60:001f3f,100:0d1117&height=120&section=footer" width="100%"/>
 
-<!-- LANG_DATA:Python:47921,JSON:11957,Markdown:9173,CSS:3141,TypeScript:2291,HTML:2104,JavaScript:2032,YAML:451,Text:56,TOML:50 -->
+<!-- LANG_DATA:Python:47917,JSON:11957,Markdown:9173,CSS:3141,TypeScript:2291,HTML:2104,JavaScript:2032,YAML:451,Text:56,TOML:50 -->

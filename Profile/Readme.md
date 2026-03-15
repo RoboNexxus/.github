@@ -1,3 +1,4 @@
+<!-- Across all 7 repositories -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,40:001f3f,100:00d9ff&height=230&section=header&text=RoboNexus&fontSize=88&fontColor=ffffff&animation=fadeIn&fontAlignY=42&desc=Official%20Robotics%20Club%20%E2%80%A2%20AIS-46%20%E2%80%A2%20Est.%202024&descAlignY=65&descSize=17&descColor=00d9ff" width="100%"/>
 
 <div align="center">

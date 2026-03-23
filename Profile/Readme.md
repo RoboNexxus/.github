@@ -70,7 +70,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="https://img.shields.io/badge/Total_Lines-118065-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
+<img src="https://img.shields.io/badge/Total_Lines-118089-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
 <br><sub>📄 Lines of Code</sub>
 </td>
 <td align="center" width="33%">
@@ -106,7 +106,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <tr><td>🌐 HTML</td><td>3,215</td><td>░░░░░░░░░░░░░░░░░░░░ 3.9%</td></tr>
 <tr><td>🟨 JavaScript</td><td>2,435</td><td>░░░░░░░░░░░░░░░░░░░░ 3.0%</td></tr>
 <tr><td>🔷 TypeScript</td><td>2,291</td><td>░░░░░░░░░░░░░░░░░░░░ 2.8%</td></tr>
-<tr><td>⚙️ YAML</td><td>474</td><td>░░░░░░░░░░░░░░░░░░░░ 0.6%</td></tr>
+<tr><td>⚙️ YAML</td><td>495</td><td>░░░░░░░░░░░░░░░░░░░░ 0.6%</td></tr>
 <tr><td>💾 Text</td><td>56</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <tr><td>🔧 TOML</td><td>50</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <!-- LANG_TABLE_END -->
@@ -125,7 +125,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <!-- CONTRIBUTORS_TABLE_START -->
 | Rank | Contributor | Commits | Lines Added | Profile |
 |:----:|:-----------|:-------:|:-----------:|:-------:|
-| 🥇 | Atharv Mandlavdiya | 338 | 261,267 | [@AtharvM02222](https://github.com/AtharvM02222) |
+| 🥇 | Atharv Mandlavdiya | 339 | 261,291 | [@AtharvM02222](https://github.com/AtharvM02222) |
 | 🥈 | RoboNexus | 17 | 15,120 | [@RoboNexxus](https://github.com/RoboNexxus) |
 | 🥉 | robonexusais46 | 3 | 47 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->
@@ -186,4 +186,4 @@ Creating a collaborative learning environment where students explore cutting-edg
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d9ff,60:001f3f,100:0d1117&height=120&section=footer" width="100%"/>
 
-<!-- LANG_DATA:Python:49428,JSON:11983,Markdown:9175,CSS:3351,HTML:3215,JavaScript:2435,TypeScript:2291,YAML:474,Text:56,TOML:50 -->
+<!-- LANG_DATA:Python:49428,JSON:11983,Markdown:9175,CSS:3351,HTML:3215,JavaScript:2435,TypeScript:2291,YAML:495,Text:56,TOML:50 -->

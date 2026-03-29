@@ -125,7 +125,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <!-- CONTRIBUTORS_TABLE_START -->
 | Rank | Contributor | Commits | Lines Added | Profile |
 |:----:|:-----------|:-------:|:-----------:|:-------:|
-| 🥇 | Atharv Mandlavdiya | 415 | 275,225 | [@AtharvM02222](https://github.com/AtharvM02222) |
+| 🥇 | Atharv Mandlavdiya | 416 | 275,230 | [@AtharvM02222](https://github.com/AtharvM02222) |
 | 🥈 | RoboNexus | 21 | 15,132 | [@RoboNexxus](https://github.com/RoboNexxus) |
 | 🥉 | robonexusais46 | 5 | 123 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->

@@ -70,7 +70,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="https://img.shields.io/badge/Total_Lines-122808-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
+<img src="https://img.shields.io/badge/Total_Lines-122804-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
 <br><sub>📄 Lines of Code</sub>
 </td>
 <td align="center" width="33%">
@@ -103,7 +103,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <tr><td>📄 JSON</td><td>12,093</td><td>██░░░░░░░░░░░░░░░░░░ 14.0%</td></tr>
 <tr><td>📝 Markdown</td><td>10,596</td><td>██░░░░░░░░░░░░░░░░░░ 12.3%</td></tr>
 <tr><td>🌐 HTML</td><td>3,378</td><td>░░░░░░░░░░░░░░░░░░░░ 3.9%</td></tr>
-<tr><td>🎨 CSS</td><td>3,306</td><td>░░░░░░░░░░░░░░░░░░░░ 3.8%</td></tr>
+<tr><td>🎨 CSS</td><td>3,302</td><td>░░░░░░░░░░░░░░░░░░░░ 3.8%</td></tr>
 <tr><td>🟨 JavaScript</td><td>2,925</td><td>░░░░░░░░░░░░░░░░░░░░ 3.4%</td></tr>
 <tr><td>🔷 TypeScript</td><td>2,554</td><td>░░░░░░░░░░░░░░░░░░░░ 3.0%</td></tr>
 <tr><td>⚙️ YAML</td><td>474</td><td>░░░░░░░░░░░░░░░░░░░░ 0.5%</td></tr>
@@ -125,7 +125,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <!-- CONTRIBUTORS_TABLE_START -->
 | Rank | Contributor | Commits | Lines Added | Profile |
 |:----:|:-----------|:-------:|:-----------:|:-------:|
-| 🥇 | Atharv Mandlavdiya | 421 | 275,302 | [@AtharvM02222](https://github.com/AtharvM02222) |
+| 🥇 | Atharv Mandlavdiya | 420 | 275,296 | [@AtharvM02222](https://github.com/AtharvM02222) |
 | 🥈 | RoboNexus | 21 | 15,132 | [@RoboNexxus](https://github.com/RoboNexxus) |
 | 🥉 | robonexusais46 | 5 | 123 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->
@@ -186,4 +186,4 @@ Creating a collaborative learning environment where students explore cutting-edg
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d9ff,60:001f3f,100:0d1117&height=120&section=footer" width="100%"/>
 
-<!-- LANG_DATA:Python:50768,JSON:12093,Markdown:10596,HTML:3378,CSS:3306,JavaScript:2925,TypeScript:2554,YAML:474,Text:59,TOML:57 -->
+<!-- LANG_DATA:Python:50768,JSON:12093,Markdown:10596,HTML:3378,CSS:3302,JavaScript:2925,TypeScript:2554,YAML:474,Text:59,TOML:57 -->

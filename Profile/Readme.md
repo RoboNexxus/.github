@@ -70,7 +70,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="https://img.shields.io/badge/Total_Lines-122806-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
+<img src="https://img.shields.io/badge/Total_Lines-123108-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
 <br><sub>📄 Lines of Code</sub>
 </td>
 <td align="center" width="33%">
@@ -99,15 +99,15 @@ Creating a collaborative learning environment where students explore cutting-edg
 <th>Share</th>
 </tr>
 <!-- LANG_TABLE_START -->
-<tr><td>🐍 Python</td><td>50,768</td><td>███████████░░░░░░░░░ 58.9%</td></tr>
+<tr><td>🐍 Python</td><td>50,981</td><td>███████████░░░░░░░░░ 59.0%</td></tr>
 <tr><td>📄 JSON</td><td>12,093</td><td>██░░░░░░░░░░░░░░░░░░ 14.0%</td></tr>
 <tr><td>📝 Markdown</td><td>10,596</td><td>██░░░░░░░░░░░░░░░░░░ 12.3%</td></tr>
 <tr><td>🌐 HTML</td><td>3,405</td><td>░░░░░░░░░░░░░░░░░░░░ 3.9%</td></tr>
-<tr><td>🎨 CSS</td><td>3,322</td><td>░░░░░░░░░░░░░░░░░░░░ 3.9%</td></tr>
-<tr><td>🟨 JavaScript</td><td>2,889</td><td>░░░░░░░░░░░░░░░░░░░░ 3.4%</td></tr>
+<tr><td>🎨 CSS</td><td>3,322</td><td>░░░░░░░░░░░░░░░░░░░░ 3.8%</td></tr>
+<tr><td>🟨 JavaScript</td><td>2,903</td><td>░░░░░░░░░░░░░░░░░░░░ 3.4%</td></tr>
 <tr><td>🔷 TypeScript</td><td>2,554</td><td>░░░░░░░░░░░░░░░░░░░░ 3.0%</td></tr>
 <tr><td>⚙️ YAML</td><td>474</td><td>░░░░░░░░░░░░░░░░░░░░ 0.5%</td></tr>
-<tr><td>💾 Text</td><td>59</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
+<tr><td>💾 Text</td><td>60</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <tr><td>🔧 TOML</td><td>57</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <!-- LANG_TABLE_END -->
 </table>
@@ -125,7 +125,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <!-- CONTRIBUTORS_TABLE_START -->
 | Rank | Contributor | Commits | Lines Added | Profile |
 |:----:|:-----------|:-------:|:-----------:|:-------:|
-| 🥇 | Atharv Mandlavdiya | 427 | 275,600 | [@AtharvM02222](https://github.com/AtharvM02222) |
+| 🥇 | Atharv Mandlavdiya | 431 | 276,016 | [@AtharvM02222](https://github.com/AtharvM02222) |
 | 🥈 | RoboNexus | 21 | 15,132 | [@RoboNexxus](https://github.com/RoboNexxus) |
 | 🥉 | robonexusais46 | 5 | 123 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->
@@ -186,4 +186,4 @@ Creating a collaborative learning environment where students explore cutting-edg
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d9ff,60:001f3f,100:0d1117&height=120&section=footer" width="100%"/>
 
-<!-- LANG_DATA:Python:50768,JSON:12093,Markdown:10596,HTML:3405,CSS:3322,JavaScript:2889,TypeScript:2554,YAML:474,Text:59,TOML:57 -->
+<!-- LANG_DATA:Python:50981,JSON:12093,Markdown:10596,HTML:3405,CSS:3322,JavaScript:2903,TypeScript:2554,YAML:474,Text:60,TOML:57 -->

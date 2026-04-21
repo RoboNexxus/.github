@@ -1,4 +1,4 @@
-<!-- Across all 10 repositories -->
+<!-- Across all 11 repositories -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,40:001f3f,100:00d9ff&height=230&section=header&text=RoboNexus&fontSize=88&fontColor=ffffff&animation=fadeIn&fontAlignY=42&desc=Official%20Robotics%20Club%20%E2%80%A2%20AIS-46%20%E2%80%A2%20Est.%202024&descAlignY=65&descSize=17&descColor=00d9ff" width="100%"/>
 
 <div align="center">
@@ -70,11 +70,11 @@ Creating a collaborative learning environment where students explore cutting-edg
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="https://img.shields.io/badge/Total_Lines-124657-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
+<img src="https://img.shields.io/badge/Total_Lines-130895-00d9ff?style=for-the-badge&logo=codecov&logoColor=white" alt="Total Lines"/>
 <br><sub>📄 Lines of Code</sub>
 </td>
 <td align="center" width="33%">
-<img src="https://img.shields.io/badge/Repositories-10-00d9ff?style=for-the-badge&logo=github&logoColor=white" alt="Repos"/>
+<img src="https://img.shields.io/badge/Repositories-11-00d9ff?style=for-the-badge&logo=github&logoColor=white" alt="Repos"/>
 <br><sub>📦 Active Repositories</sub>
 </td>
 <td align="center" width="33%">
@@ -99,14 +99,14 @@ Creating a collaborative learning environment where students explore cutting-edg
 <th>Share</th>
 </tr>
 <!-- LANG_TABLE_START -->
-<tr><td>🐍 Python</td><td>51,361</td><td>███████████░░░░░░░░░ 58.6%</td></tr>
-<tr><td>📄 JSON</td><td>12,113</td><td>██░░░░░░░░░░░░░░░░░░ 13.8%</td></tr>
-<tr><td>📝 Markdown</td><td>11,164</td><td>██░░░░░░░░░░░░░░░░░░ 12.7%</td></tr>
-<tr><td>🌐 HTML</td><td>3,936</td><td>░░░░░░░░░░░░░░░░░░░░ 4.5%</td></tr>
-<tr><td>🎨 CSS</td><td>3,344</td><td>░░░░░░░░░░░░░░░░░░░░ 3.8%</td></tr>
-<tr><td>🟨 JavaScript</td><td>2,627</td><td>░░░░░░░░░░░░░░░░░░░░ 3.0%</td></tr>
-<tr><td>🔷 TypeScript</td><td>2,554</td><td>░░░░░░░░░░░░░░░░░░░░ 2.9%</td></tr>
-<tr><td>⚙️ YAML</td><td>475</td><td>░░░░░░░░░░░░░░░░░░░░ 0.5%</td></tr>
+<tr><td>🐍 Python</td><td>51,361</td><td>███████████░░░░░░░░░ 55.1%</td></tr>
+<tr><td>📄 JSON</td><td>12,204</td><td>██░░░░░░░░░░░░░░░░░░ 13.1%</td></tr>
+<tr><td>📝 Markdown</td><td>11,172</td><td>██░░░░░░░░░░░░░░░░░░ 12.0%</td></tr>
+<tr><td>🔷 TypeScript</td><td>7,513</td><td>█░░░░░░░░░░░░░░░░░░░ 8.1%</td></tr>
+<tr><td>🌐 HTML</td><td>4,172</td><td>░░░░░░░░░░░░░░░░░░░░ 4.5%</td></tr>
+<tr><td>🎨 CSS</td><td>3,630</td><td>░░░░░░░░░░░░░░░░░░░░ 3.9%</td></tr>
+<tr><td>🟨 JavaScript</td><td>2,628</td><td>░░░░░░░░░░░░░░░░░░░░ 2.8%</td></tr>
+<tr><td>⚙️ YAML</td><td>477</td><td>░░░░░░░░░░░░░░░░░░░░ 0.5%</td></tr>
 <tr><td>💾 Text</td><td>62</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <tr><td>🔧 TOML</td><td>57</td><td>░░░░░░░░░░░░░░░░░░░░ 0.1%</td></tr>
 <!-- LANG_TABLE_END -->
@@ -125,7 +125,7 @@ Creating a collaborative learning environment where students explore cutting-edg
 <!-- CONTRIBUTORS_TABLE_START -->
 | Rank | Contributor | Commits | Lines Added | Profile |
 |:----:|:-----------|:-------:|:-----------:|:-------:|
-| 🥇 | Atharv Mandlavdiya | 524 | 281,003 | [@AtharvM02222](https://github.com/AtharvM02222) |
+| 🥇 | Atharv Mandlavdiya | 529 | 287,487 | [@AtharvM02222](https://github.com/AtharvM02222) |
 | 🥈 | RoboNexus | 21 | 15,132 | [@RoboNexxus](https://github.com/RoboNexxus) |
 | 🥉 | robonexusais46 | 5 | 123 | [@robonexusais46](https://github.com/robonexusais46) |
 <!-- CONTRIBUTORS_TABLE_END -->
@@ -186,4 +186,4 @@ Creating a collaborative learning environment where students explore cutting-edg
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00d9ff,60:001f3f,100:0d1117&height=120&section=footer" width="100%"/>
 
-<!-- LANG_DATA:Python:51361,JSON:12113,Markdown:11164,HTML:3936,CSS:3344,JavaScript:2627,TypeScript:2554,YAML:475,Text:62,TOML:57 -->
+<!-- LANG_DATA:Python:51361,JSON:12204,Markdown:11172,TypeScript:7513,HTML:4172,CSS:3630,JavaScript:2628,YAML:477,Text:62,TOML:57 -->
